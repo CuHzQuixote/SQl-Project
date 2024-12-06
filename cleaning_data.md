@@ -1,4 +1,6 @@
 What issues will you address by cleaning the data?
+
+
 there were a lot of null values and columns that needed reformatting. 
 I did most of the cleaning and reformatting that invlolved time/dates using excel.
 the city, column in the all_sessions table had a lot of rows filled with "not available in demo dataset"
