@@ -10,7 +10,11 @@ a better understanding and more confidence in my skills)
 ### (your step 2)
 
 ## Results
-(fill in what you discovered this data could tell you and how you used the data to answer those questions)
+(fill in what you discovered this data could tell you and how you used the data to answer those questions
+
+it told us when,where and how people were buying things from a website. How long they were on the site 
+and how many times they visited. the tables also told us categories of products and their names. when all connected
+the tables can easily answer questions and give insights about the database when given the time to asnwer and create them.)
 
 ## Challenges 
 (discuss challenges you faced in the project
