@@ -1,4 +1,4 @@
-Question 1: find the 5 most popular items bought in the US
+Question 1: /* find the 5 most popular items bought in the US */
 
 SQL Queries: 
 WITH USA_Items AS (SELECT country,
@@ -15,11 +15,11 @@ ORDER BY order_amount DESC
 limit 5
 
 Answer: 
-the 22oz youtube bottle infuser, white google short sleeve hero tee, nest indoor camera, nest outdoor camera, google vintage tee
-black were the top 5 items bought in the united states. 
+/* the 22oz youtube bottle infuser, white google short sleeve hero tee, nest indoor camera, nest outdoor camera, google vintage tee
+black were the top 5 items bought in the united states. */
 
 
-Question 2: what was the most popular categories of item bought in Atlanta?
+Question 2:/* what was the most popular categories of item bought in Atlanta? */
 
 SQL Queries:
 WITH Atlanta_Items AS (SELECT city,
@@ -38,8 +38,9 @@ limit 5
 
 Answer:
 
-the nest smoke alarm, youtube decals, heather google short sleeve shirt, android engineer tee shirt charcoal
-and androind vintage henley were the most bought items in atlanta
+/* the nest smoke alarm, youtube decals, heather google short sleeve shirt, android engineer tee shirt charcoal
+and androind vintage henley were the most bought items in atlanta which belonged to the nest-Usa, Youtube, and men's t-shirt
+categories */
 
 Question 3: In which cities were google items the most popular?
 
@@ -62,8 +63,8 @@ limit 5
 
 
 Answer:
-in order
-Mountainview, New York, Hyderabad, san fransisco, and san jose were the cities that bought the most items related to google.
+/* in order
+Mountainview, New York, Hyderabad, san fransisco, and san jose were the cities that bought the most items related to google. */
 
 Question 4: 
 
