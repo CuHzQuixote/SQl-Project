@@ -14,11 +14,11 @@ order by "totalTransactionRevenue" desc
 
 
 Answer:
-the cities and countries witht the highest level of transaction revenues are the U.S with its top cities being Atlanta, Sunnyvale, and Los angeles, Isreal with Tel Aviv as its top city and Austrailia with Sydney as its top city
+/*the cities and countries with the highest level of transaction revenues are the U.S with its top cities being Atlanta, Sunnyvale, and Los angeles, Isreal with Tel Aviv as its top city and Austrailia with Sydney as its top city*/
 
 
 
-**Question 2: What is the average number of products ordered from visitors in each city and country?**
+/*Question 2: What is the average number of products ordered from visitors in each city and country?*/
 
 
 select al.country, al.city, al."productSku", al."ProductCategory",
@@ -35,13 +35,13 @@ order by avg_orders desc
 
 
 Answer:
-I used this function to help create a table which shows the categories, skus, and total ordered. 
+/* I used this function to help create a table which shows the categories, skus, and total ordered.*/
 
 
 
 
 
-**Question 3: Is there any pattern in the types (product categories) of products ordered from visitors in each city and country?**
+/*Question 3: Is there any pattern in the types (product categories) of products ordered from visitors in each city and country?*/
 
 
 WITH country_categories AS (SELECT DISTINCT ON (country)country,
@@ -71,15 +71,15 @@ limit 5
 
 
 
-Answer: I made two different queries to find what the top categories were in each city/country and product within
+Answer: /* I made two different queries to find what the top categories were in each city/country and product within
 that category. with this query you can see that overall it's youtube brand merch that is the most popular
-category by country. but when you check by country it's items by nest which are the most commonly bought
+category by country. but when you check by country it's items by nest which are the most commonly bought*/
 
 
 
 
 
-**Question 4: What is the top-selling product from each city/country? Can we find any pattern worthy of noting in the products sold?**
+/*Question 4: What is the top-selling product from each city/country? Can we find any pattern worthy of noting in the products sold?*/
 
 
 SQL Queries:
@@ -121,14 +121,14 @@ limit 5
 
 Answer:
 
-I made 2 seperate queries. one for cities and another for countries with this I was able to get a table which would show which Sku showed up the most for each country and city and how often it did. 
+/* I made 2 seperate queries. one for cities and another for countries with this I was able to get a table which would show which Sku showed up the most for each country and city and how often it did. 
 one pattern I noticed after looking at both tables was overall it was clothing items which were appearing in the highest 
 quantities. I used a cte because it could create a table that I could filter data out of to get the answer I specifically 
-wanted.
+wanted. */
 
 
 
-**Question 5: Can we summarize the impact of revenue generated from each city/country?**
+/*Question 5: Can we summarize the impact of revenue generated from each city/country?*/
 
 SQL Queries:
 
@@ -152,8 +152,8 @@ order by order_amount desc
 
 Answer:
 
-with these queries I wrote you can find the products which made the most money for each city and country by the amount
-of times they were ordered. this way you can see what places are buying the most of certain products or categories
+/* with these queries I wrote you can find the products which made the most money for each city and country by the amount
+of times they were ordered. this way you can see what places are buying the most of certain products or categories */
 
 
 
