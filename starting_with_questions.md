@@ -44,11 +44,36 @@ I used this function to help create a table which shows the categories, skus, an
 **Question 3: Is there any pattern in the types (product categories) of products ordered from visitors in each city and country?**
 
 
-SQL Queries:
+WITH country_categories AS (SELECT DISTINCT ON (country)country,
+"ProductName", "ProductCategory",
+COUNT("productSku") AS order_amount
+FROM all_sessions
+GROUP BY country, "ProductName","ProductCategory"
+ORDER BY country, COUNT("productSku") 
+DESC)
+SELECT *
+FROM country_categories
+ORDER BY order_amount DESC
+limit 5
+
+with city_categories as (select distinct on(city) city, 
+"ProductName", "ProductCategory", 
+count("productSku") as order_amount
+from all_sessions
+where city != '(not set)'
+and city !='not available in demo dataset'
+and city is not null
+group by city, "ProductName", "ProductCategory"
+order by city, count("productSku") desc)
+select * from city_categories
+order by order_amount desc
+limit 5
 
 
 
-Answer:
+Answer: I made two different queries to find what the top categories were in each city/country and product within
+that category. with this query you can see that overall it's youtube brand merch that is the most popular
+category by country. but when you check by country it's items by nest which are the most commonly bought
 
 
 
@@ -58,23 +83,48 @@ Answer:
 
 
 SQL Queries:
-with product_rankings as (select al.country ,al.city, al."ProductName", sr.total_ordered,
-rank() over (partition by al."ProductName" order by sr.total_ordered desc)as rank from
-all_sessions al
-join sales_report sr
-on sr."productname" = al."ProductName"
-where city != '(not set)'
-and city !='not available in demo dataset'
-and city is not null)
-select distinct country,city, "ProductName", total_ordered
-from product_rankings
-order by total_ordered desc
+
+WITH city_orders AS (SELECT DISTINCT ON (city)city, "ProductName", 
+COUNT("productSku") AS order_amount
+FROM all_sessions
+WHERE city != 'not available in demo dataset' 
+AND city IS NOT NULL
+and city !='(not set)'
+GROUP BY city, "ProductName"
+ORDER BY city, COUNT("productSku") 
+DESC)
+SELECT *
+FROM city_orders
+ORDER BY order_amount DESC
+limit 5
+
+
+WITH country_orders AS (SELECT DISTINCT ON (country)country,
+"ProductName",
+COUNT("productSku") AS order_amount
+FROM all_sessions
+WHERE city != 'not available in demo dataset' 
+AND city IS NOT NULL
+and country !='(not set)'
+GROUP BY country, "ProductName"
+ORDER BY country, COUNT("productSku") 
+DESC)
+SELECT *
+FROM country_orders
+ORDER BY order_amount DESC
+limit 5
+
+
+
+
 
 
 Answer:
 
-From what I have seen after inputting my query it seems that the ballpoint pen is the most popular product
-across most countries. I'll have to come back and fix this later on
+I made 2 seperate queries. one for cities and another for countries with this I was able to get a table which would show which Sku showed up the most for each country and city and how often it did. 
+one pattern I noticed after looking at both tables was overall it was clothing items which were appearing in the highest 
+quantities. I used a cte because it could create a table that I could filter data out of to get the answer I specifically 
+wanted.
 
 
 
@@ -82,7 +132,23 @@ across most countries. I'll have to come back and fix this later on
 
 SQL Queries:
 
+select ("totalTransactionRevenue"/1000000) as 
+totaltransaction_fixed,country, "ProductName",
+count("productSku") as order_amount
+from all_sessions
+where "totalTransactionRevenue" is not null
+group by country, "totalTransactionRevenue", "ProductName"
+order by order_amount desc
 
+select ("totalTransactionRevenue"/1000000) as totaltransaction_fixed, city
+, "ProductName", count("productSku") as order_amount
+from all_sessions
+where "totalTransactionRevenue" is not null
+and city !='(not set)'
+and city != 'not available in demo dataset'
+and city is not null
+group by city, "totalTransactionRevenue","ProductName"
+order by order_amount desc
 
 Answer:
 
