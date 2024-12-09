@@ -14,3 +14,6 @@ for example all of the "fullvisitorid", "productSKu", "productname", and "channe
 
 QA Process:
 Describe your QA process and include the SQL queries used to execute it.
+for my QA process I cleaned up most of the number amounts in excel by dividing costs/prices by 1,000,000 like the instructions
+said. when I was Inputting the tables into sql from excel I made sure to follow the instructions clearly and made sure
+I had the same names for the columns so then it would import correctly.
