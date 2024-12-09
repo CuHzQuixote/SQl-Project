@@ -152,7 +152,8 @@ order by order_amount desc
 
 Answer:
 
-
+with these queries I wrote you can find the products which made the most money for each city and country by the amount
+of times they were ordered. this way you can see what places are buying the most of certain products or categories
 
 
 
