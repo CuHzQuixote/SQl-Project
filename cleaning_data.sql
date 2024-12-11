@@ -18,7 +18,9 @@ from all_sessions
 where city != 'not set'
 and city is not null
 and city != 'not available in demo dataset'
-  */ I used these queries to get rid of all values that I could not use for cities/*
+and "totalTransactionRevenue" is not null
+  */ I used these queries to get rid of all values that I could not use for cities while getting rid of null 
+ transaction values as well/*
   
 */ I used this one to filter out all the other countries in the table to get the one I needed for my question. /*
  FROM all_sessions
