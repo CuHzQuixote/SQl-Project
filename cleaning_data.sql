@@ -17,5 +17,8 @@ Below, provide the SQL queries you used to clean your data.
 select distinct city, country, "totalTransactionRevenue" 
 from all_sessions
 where city != 'not set'
+and city is not null
 
+
+  
   
