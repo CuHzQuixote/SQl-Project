@@ -13,3 +13,7 @@ also I would do the same for null values with is not null
 
 Queries:
 Below, provide the SQL queries you used to clean your data.
+
+select distinct city, country, "totalTransactionRevenue" 
+from all_sessions
+where city != 'not set'
