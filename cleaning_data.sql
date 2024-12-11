@@ -20,7 +20,10 @@ and city is not null
 and city != 'not available in demo dataset'
   */ I used these queries to get rid of all values that I could not use for cities/*
   
-
+*/ I used this one to filter out all the other countries in the table to get the one I needed for my question. /*
+ FROM all_sessions
+where country = 'United States'
+GROUP BY country, "ProductName","ProductCategory"
 
   
   
