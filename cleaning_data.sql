@@ -13,11 +13,13 @@ also I would do the same for null values with is not null
 
 Queries:
 Below, provide the SQL queries you used to clean your data.
-
-select distinct city, country, "totalTransactionRevenue" 
+select *
 from all_sessions
 where city != 'not set'
 and city is not null
+and city != 'not available in demo dataset'
+  */ I used these queries to get rid of all values that I could not use for cities/*
+  
 
 
   
