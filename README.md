@@ -7,7 +7,7 @@ a better understanding and more confidence in my skills)
 
 ## Process
 ### (your step 1)
-I cleaned up the data in excel and made sure to get rid of things that were not needed or not spend tome on columns
+I cleaned up the data in excel and made sure to get rid of things that were not needed or not spend time on columns
 that had nothing to do with the questions which we were asked to solve
 ### (your step 2)
 after I was done in excel I made sure to create the database and tables before transferring them all over into postgres
